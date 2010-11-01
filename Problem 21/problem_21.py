@@ -1,13 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import math
+
 def divsum(number):
-	sum = 0
-	for i in range(1,number):
+	sum = 1
+	for i in range(2, math.floor(math.sqrt(number))):
 		if ((number/i) % 1 == 0):
-			sum += i
+			sum += i + number/i
 	
-	return sum
+	return int(sum)
+	
 	
 def amicable(a):
 	b = divsum(a)
@@ -23,7 +26,8 @@ def main():
 		if (amicable(i)):
 			print(i)
 			pairs += i
-			
+	
+	print()
 	print(pairs)
 	return 0
 	
