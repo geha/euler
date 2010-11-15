@@ -24,9 +24,8 @@ def isAbundant (number):
 def isSumOfAbundant (number, abundantList):
 	ret = False
 
-	for i in abundantList:
-		if (number - i in abundantList):
-			ret = True
+	if (any (number - i in abundantList for i in abundantList)):
+		ret = True
 
 	return ret
 
