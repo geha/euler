@@ -23,31 +23,26 @@ def isAbundant (number):
 
 def isSumOfAbundant (number, abundantList):
 	ret = False
-	for i in range(0, len(abundantList)):
-		if (abundantList[i] >= number or ret):
-			break
 
-		diff = number - abundantList[i]
-
-		if (diff in abundantList):
+	for i in abundantList:
+		if (number - i in abundantList):
 			ret = True
-			break
 
 	return ret
 
 def main():
-	abundantList = []
+	abundantList = set()
 
 	for i in range(1, 20162):
 		if (isAbundant(i)):
-			abundantList.append(i)
+			abundantList.add(i)
 
 	sum = 0
 	for i in range (1, 20162):
 		if (not(isSumOfAbundant(i, abundantList))):
 			sum += i
 
-		if (i % 100 == 0):
+		if (i % 1000 == 0):
 			print (i)
 
 	print()
