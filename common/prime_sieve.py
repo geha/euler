@@ -3,6 +3,8 @@
 
 def prime_sieve(limit):
 	primes = [True] * (limit+1)
+	primes[0] = False
+	primes[1] = False
 
 	for i in range(2, int(limit**0.5)+1):
 		if (primes[i]):

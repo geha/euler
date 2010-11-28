@@ -1,24 +1,43 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-def isTruncatable (value):
+import sys
+sys.path.append("D:\\Projects\\Project Euler")
+
+from common import prime_sieve
+
+def isTruncatable (value, primeList):
 	ret = True
 	value = str(value)
-	for i in range(1, len(value)):
-		if (not isPrime(int(value[i:]))):
-			ret = false
-		elif (not isPrime(int(value[:i]))):
-			ret = false
+
+	if (len(value) <= 1):
+		ret = False
+	else:
+		for i in range(0, len(value)):
+			if (int(value[i:]) not in primeList):
+				ret = False
+				break
+			elif (int(value[:i+1]) not in primeList):
+				ret = False
+				break
 
 	return ret
 
-
-
 def main():
 
-	print (sys.path)
+	count = 0
+	primes = prime_sieve.prime_sieve(10**6)
 
-	#~ print(isTruncatable(3797))
+	prime_set = set()
+	for i in range(0, len(primes)):
+		if (primes[i] == True):
+			prime_set.add(i)
+
+	for number in prime_set:
+		if isTruncatable(number, prime_set):
+			count += number
+
+	print(count)
 
 	return 0
 
