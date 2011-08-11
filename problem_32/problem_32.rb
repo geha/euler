@@ -11,16 +11,20 @@ def pandigital? number
   result
 end
 
-products = []
-for i in (1..9876)
-  max = 10**(4-Math.log10(i).to_i)
-  max.downto(i) do |j|
-    if pandigital?(i.to_s + j.to_s + (i*j).to_s)
-      products << i*j unless products.include?(i*j)
+if __FILE__ == $0
+
+  products = []
+  for i in (1..9876)
+    max = 10**(4-Math.log10(i).to_i)
+    max.downto(i) do |j|
+      if pandigital?(i.to_s + j.to_s + (i*j).to_s)
+        products << i*j unless products.include?(i*j)
+      end
     end
   end
-end
 
-sum = 0
-products.each { |x| sum += x }
-print sum
+  sum = 0
+  products.each { |x| sum += x }
+  print sum
+
+end
