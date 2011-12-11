@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 max = 0
 
 for a in 1..99

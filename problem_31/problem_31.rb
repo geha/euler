@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 counter = 0
 
 200.step(0, -200) do |a|
