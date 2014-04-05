@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
-sys.path.append("D:\\Projects\\Project Euler")
+#sys.path.append("D:\\Projects\\spare\\project_euler")
+sys.path.append("../")
 
 from common import prime_sieve
 

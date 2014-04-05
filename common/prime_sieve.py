@@ -24,6 +24,15 @@ def isPrime(number):
 
 	return ret
 
+def primes(limit):
+	sieve = prime_sieve(limit)
+	primes = []
+	for i in range(len(sieve)):
+		if sieve[i] is True:
+			primes.append(i)
+
+	return primes
+
 
 def main():
 
