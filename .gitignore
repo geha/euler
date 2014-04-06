@@ -7,3 +7,4 @@
 *.pyc
 *.bat
 /.idea/
+*.sublime-workspace
